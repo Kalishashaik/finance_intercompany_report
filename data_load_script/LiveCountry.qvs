@@ -1,0 +1,61 @@
+///$tab LiveCountry
+LiveCountry:
+LOAD
+    Region,
+    "COUNTRY CODE",
+    "COUNTRY CODE"&Num(Date("data suppressed as of")) as "AutoDateKey",
+    "COUNTRY NAME",
+    Upper("OFR CW1")as "Actual OFR CW1",
+    Date("go live OFR",'MM-DD-YYYY') as "OFR Actul Go Live Date",
+    Date("data suppressed as of",'MM-DD-YYYY') AS "CW1 Start Date",
+    Date(Today(),'MM-DD-YYYY') as "CW1 End Date"
+FROM [lib://$(vPath)/QVD's/KPI/CW1 Live Countries\CW1 live countries Oct 2018 update.xlsx]
+(ooxml, embedded labels, header is 2 lines, table is [Country System Status]);
+//Where  Upper("OFR CW1")='YES';
+
+Left join(LiveCountry)
+
+Load "COUNTRY CODE" & Num("CW1 Start Date") as "AutoDateKey",
+  "CW1 Start Date" as S,
+  "CW1 End Date" as E,
+  Date("CW1 Start Date"+IterNo()-1) as AutoDate
+
+Resident LiveCountry
+
+While "CW1 Start Date"+IterNo()-1 <= "CW1 End Date";
+
+Concatenate 
+Load * Inline
+[
+"COUNTRY CODE"
+NA
+];
+  
+Live_Y_N:
+
+Load *,
+
+Upper(Trim("COUNTRY CODE"))&Num(AutoDate) as LiveKey
+Resident
+LiveCountry;
+
+Drop table LiveCountry;
+
+/*************************************************************************/
+
+Left Join (stage4)
+Load LiveKey,
+"Actual OFR CW1" as "OFR CW1"
+Resident Live_Y_N;
+
+NoConcatenate
+Stage_final:
+Load *,
+If("OFR CW1"='YES','YES','NO') as "CW1_LIVE"
+Resident stage4 
+where "OFR CW1"='YES';
+
+Drop Table stage4;
+
+//exit Script;
+

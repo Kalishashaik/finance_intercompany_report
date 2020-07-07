@@ -1,0 +1,207 @@
+///$tab Updated Logic 2
+let vKPI='46ICTASD';
+
+LIB CONNECT TO 'DHL23';
+
+intercompany_transaction_approval_rpt1:
+LOAD "Creditor/Debtor",
+    "Intercompany Org Proxy",
+    "Type",
+    "Transaction Num",
+    "Job Invoice Number",
+    DSBInvoice,
+    Category,
+    "Post Date",
+    "Invoice Date",
+    "Due Date",
+    "Currency",
+    "Transaction Amount",
+    "Outstanding Amount",
+    "Check/Reference No",
+    Canceled,
+    "Created By",
+    "Created Time",
+    "Last Edit",
+    Branch,
+    Department,
+    "Invoice Description",
+    "Exchange Rate",
+    "Tax Amount",
+    "Local Amount",
+    "Check Book",
+    "Creditor/Debtor Full Name",
+    "Payment_Requested_Name",
+    "Receiving_Branch",
+    "Receiving_Department",
+    "Receiving_Operator",
+    "Payment_Requisition_Date",
+    "Payment_Requisition_Status",
+    "Aggreed_Payment",
+    "Audited_by",
+    "Company Code",
+    Country;
+SQL SELECT "Creditor/Debtor",
+    "Intercompany Org Proxy",
+    "Type",
+    "Transaction Num",
+    "Job Invoice Number",
+    DSBInvoice,
+    Category,
+    "Post Date",
+    "Invoice Date",
+    "Due Date",
+    "Currency",
+    "Transaction Amount",
+    "Outstanding Amount",
+    "Check/Reference No",
+    Canceled,
+    "Created By",
+    "Created Time",
+    "Last Edit",
+    Branch,
+    Department,
+    "Invoice Description",
+    "Exchange Rate",
+    "Tax Amount",
+    "Local Amount",
+    "Check Book",
+    "Creditor/Debtor Full Name",
+    "Payment_Requested_Name",
+    "Receiving_Branch",
+    "Receiving_Department",
+    "Receiving_Operator",
+    "Payment_Requisition_Date",
+    "Payment_Requisition_Status",
+    "Aggreed_Payment",
+    "Audited_by",
+    "Company Code",
+    Country
+FROM TDLAKE."intercompany_transaction_approval_rpt";
+
+
+V_EXCH_RT_CALENDAR1:
+LOAD "currency_cd",
+    "exch_rt_type_cd",
+    "exch_rt_period_dt",
+    "eur_exch_rt",
+    "valid_dt",
+    "exch_rt_month_id";
+SQL SELECT "currency_cd",
+    "exch_rt_type_cd",
+    "exch_rt_period_dt",
+    "eur_exch_rt",
+    "valid_dt",
+    "exch_rt_month_id"
+FROM "DB_DM2_CTCT_PRD"."V_EXCH_RT_CALENDAR";
+
+
+// CW1_Countries:
+
+// load * inline 
+// [
+// Company Code
+// AE0
+// AE1
+// AO0
+// AR0
+// AT0
+// AT1
+// AU0
+// BD0
+// BE0
+// BF0
+// BG0
+// BH0
+// BR0
+// CA0
+// CH0
+// CI0
+// CL0
+// CM0
+// CN0
+// CO0
+// CO1
+// CO2
+// CO3
+// CR0
+// CZ0
+// DE0
+// DHL
+// DK0
+// EC0
+// EE0
+// EG0
+// ES0
+// ET0
+// FI0
+// FJ0
+// FR0
+// GA0
+// GB0
+// GH0
+// GR0
+// GT0
+// HK0
+// HN0
+// HR0
+// HU0
+// ID0
+// IE0
+// IN0
+// IQ0
+// JP0
+// KE0
+// KH0
+// KR0
+// KW0
+// LB0
+// LK0
+// LT0
+// LU0
+// LV0
+// LY0
+// MA0
+// MG0
+// MM0
+// MU0
+// MX0
+// MY0
+// MZ0
+// NG0
+// NI0
+// NL0
+// NO0
+// NZ0
+// OM0
+// PA0
+// PE0
+// PG0
+// PH0
+// PK0
+// PL0
+// PT0
+// QA0
+// RO0
+// RS0
+// RU0
+// SA0
+// SE0
+// SG0
+// SI0
+// SK0
+// SN0
+// SV0
+// TH0
+// TR0
+// TW0
+// UA0
+// UG0
+// US0
+// VN0
+// ZA0
+// ];
+
+
+
+
+

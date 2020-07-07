@@ -1,0 +1,107 @@
+[
+  {
+    "qInfo": {
+      "qId": "685b0621-02c6-4285-bdf2-42e918f3f61b",
+      "qType": "bookmark"
+    },
+    "qMetaDef": {
+      "title": "Bookmark1",
+      "description": ""
+    },
+    "creationDate": "2020-07-04T11:22:01.715Z",
+    "sheetId": "4ae07db9-97b7-42e4-810a-50b145054774",
+    "selectionFields": "Company Code, Month, region_code, View",
+    "qData": {
+      "qBookMark": {
+        "qStateData": [
+          {
+            "qStateName": "$",
+            "qFieldItems": [
+              {
+                "qDef": {
+                  "qName": "Company Code",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "Month",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "region_code",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": [],
+                "qOneAndOnlyOne": true
+              },
+              {
+                "qDef": {
+                  "qName": "View",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": [],
+                "qOneAndOnlyOne": true
+              }
+            ]
+          }
+        ],
+        "qUtcModifyTime": 44016.55695601852,
+        "qVariableItems": [],
+        "qPatches": []
+      }
+    }
+  }
+]

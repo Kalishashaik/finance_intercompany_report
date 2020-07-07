@@ -1,0 +1,9 @@
+///$tab Inline
+load * inline [
+View
+BarView
+GeoView
+TableView
+AllView
+]
+;

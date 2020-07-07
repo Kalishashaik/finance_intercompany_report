@@ -1,0 +1,234 @@
+///$tab Step2
+Stage1:
+
+LOAD
+
+//ApplyMap('test',Country,'NA') as gc_rx_localcurrency_cd,
+        date(date#(left(timestamp(timestamp(left("Invoice Date",19),'MM-DD-YYYY hh:mm:ss TT'),
+    'MM-DD-YYYY hh:mm:ss TT'),10),'MM-DD-YYYY'),'MM-DD-YYYY') as Invoice_Date,
+    "Creditor/Debtor",
+    "Intercompany Org Proxy",
+    "Type",
+    "Transaction Num",
+    "Job Invoice Number",
+    DSBInvoice,
+    Category,
+    "Post Date",
+   // "Invoice Date",
+    "Due Date",
+    Currency,
+    Country,
+    "Transaction Amount",
+    "Outstanding Amount",
+    "Check/Reference No",
+    Canceled,
+    "Created By",
+    "Created Time",
+    "Last Edit",
+    Branch,
+    Department,
+    "Invoice Description",
+    "Exchange Rate",
+    "Tax Amount",
+    "Local Amount",
+    "Check Book",
+    "Creditor/Debtor Full Name",
+    Payment_Requested_Name,
+    Receiving_Branch,
+    Receiving_Department,
+    Receiving_Operator,
+    Payment_Requisition_Date,
+    Payment_Requisition_Status,
+    Aggreed_Payment,
+    Audited_by,
+   // "Company Code" as gc_cd,
+    "Company Code"
+   // Country
+   
+   resident intercompany_transaction_approval_rpt1;
+//FROM [lib://FRP_CW1/Task/QVD's/intercompany_transaction_approval_rpt.qvd]
+//(qvd);
+
+//exit Script;
+drop table intercompany_transaction_approval_rpt1;
+//drop table CW1_Countries;
+
+NoConcatenate
+
+Stage2:
+load 
+ 
+*,
+
+//date(Invoice_Date,'YYYYMM')&gc_rx_localcurrency_cd as key
+date(Invoice_Date,'YYYYMM')&Currency as key
+Resident Stage1;
+
+drop table Stage1;
+
+left join (Stage2)
+
+V_EXCH_RT_CALENDAR:
+LOAD distinct 
+    currency_cd,
+    date(valid_dt,'YYYYMM')&currency_cd as key,
+    //date(exch_rt_period_dt,'YYYYMM')&currency_cd as key,
+
+     eur_exch_rt
+
+resident V_EXCH_RT_CALENDAR1 where exch_rt_type_cd='bc';
+
+drop Table V_EXCH_RT_CALENDAR1;
+
+NoConcatenate
+stage3:
+Load 
+//LoggedInCountry1,
+date(Invoice_Date,'MM-DD-YYYY') as Invoice_Date,
+    date(Invoice_Date,'MM-DD-YYYY') as Date,
+    year(date(Invoice_Date,'MM-DD-YYYY')) as Year,
+    month(date(Invoice_Date,'MM-DD-YYYY')) as Month,
+    Weekday(date(Invoice_Date,'MM-DD-YYYY')) as WeekDays,
+    Week(date(Invoice_Date,'MM-DD-YYYY')) as Week, 
+       if(Interval(date(Today(),'MM-DD-YYYY') - date(Invoice_Date,'MM-DD-YYYY'),'D')>=0 and
+   Interval(date(Today(),'MM-DD-YYYY') - date(Invoice_Date,'MM-DD-YYYY'),'D')<=15,'0-15',
+
+   if(Interval(date(Today(),'MM-DD-YYYY') - date(Invoice_Date,'MM-DD-YYYY'),'D')>=16 and 
+   Interval(date(Today(),'MM-DD-YYYY') - date(Invoice_Date,'MM-DD-YYYY'),'D')<=30,'16-30',
+
+   if(Interval(date(Today(),'MM-DD-YYYY') - date(Invoice_Date,'MM-DD-YYYY'),'D')>=31 and 
+   Interval(date(Today(),'MM-DD-YYYY') - date(Invoice_Date,'MM-DD-YYYY'),'D')<=60,'31-60',
+
+   if(Interval(date(Today(),'MM-DD-YYYY') - date(Invoice_Date,'MM-DD-YYYY'),'D')>=61 and 
+   Interval(date(Today(),'MM-DD-YYYY') - date(Invoice_Date,'MM-DD-YYYY'),'D')<=90,'61-90','>90'))))
+    as [Ageing Bucket],
+    Country as country_code,
+    Country,
+      "Creditor/Debtor",
+    "Intercompany Org Proxy",
+    "Type",
+    "Transaction Num",
+    "Job Invoice Number",
+    DSBInvoice,
+    Category,
+    "Post Date",
+   // "Invoice Date",
+    "Due Date",
+    Currency,
+    "Transaction Amount",
+    "Outstanding Amount",
+    "Check/Reference No",
+    Canceled,
+    "Created By",
+    "Created Time",
+    "Last Edit",
+    Branch,
+    Department,
+    "Invoice Description",
+    "Exchange Rate",
+    "Tax Amount",
+    "Local Amount",
+    "Check Book",
+    "Creditor/Debtor Full Name",
+    Payment_Requested_Name,
+    Receiving_Branch,
+    Receiving_Department,
+    Receiving_Operator,
+    Payment_Requisition_Date,
+    Payment_Requisition_Status,
+    Aggreed_Payment,
+    Audited_by,
+    "Company Code",
+    currency_cd,
+   key,
+    eur_exch_rt,
+      sum( "Transaction Amount") as Sum_Transaction_Amt,
+sum("Transaction Amount"/eur_exch_rt) as Transaction_Amount_eur
+Resident Stage2
+where 
+date(Invoice_Date,'MM-DD-YYYY')<=date(Today(),'MM-DD-YYYY')
+group by
+//Invoice_Date_TS,
+//LoggedInCountry1,
+Invoice_Date,
+//[Ageing Bucket],
+   Country,
+     "Creditor/Debtor",
+    "Intercompany Org Proxy",
+    "Type",
+    "Transaction Num",
+    "Job Invoice Number",
+    DSBInvoice,
+    Category,
+    "Post Date",
+   // "Invoice Date",
+    "Due Date",
+    Currency,
+    "Transaction Amount",
+    "Outstanding Amount",
+    "Check/Reference No",
+    Canceled,
+    "Created By",
+    "Created Time",
+    "Last Edit",
+    Branch,
+    Department,
+    "Invoice Description",
+    "Exchange Rate",
+    "Tax Amount",
+    "Local Amount",
+    "Check Book",
+    "Creditor/Debtor Full Name",
+    Payment_Requested_Name,
+    Receiving_Branch,
+    Receiving_Department,
+    Receiving_Operator,
+    Payment_Requisition_Date,
+    Payment_Requisition_Status,
+    Aggreed_Payment,
+    Audited_by,
+    "Company Code",
+     currency_cd,
+    key,
+    eur_exch_rt
+    ;
+
+
+
+stage4: 
+
+load * ,
+Country&Num(Date(Invoice_Date,'MM-DD-YYYY')) as LiveKey,
+"Company Code"&'-'&'46ICTASD' as COMPANYKEY
+
+resident stage3;
+
+left join (stage4)
+
+LOAD
+    country_code,
+    country_name,
+   // rn_currency_cd,
+    subregion_code,
+    subregion_name,
+    region_code,
+    region_name
+FROM [lib://FRP_CW1/QVD's/KPI/Geo.qvd]
+(qvd);
+
+// inner join (stage4)
+
+// load 
+// "Company Code"
+// Resident CW1_Countries;
+
+//drop table CW1_Countries;
+
+drop table stage3;
+
+drop Table Stage2;
+
+
+
+
+//exit Script;

@@ -1,0 +1,100 @@
+///$tab Access
+Let vPath= 'FRP_CW1';
+//----------Region----------------
+ACCESS_Temp:
+LOAD
+    "ACCESS",
+    "USERID",
+    LDAP_Name,
+    "Restriction Type",
+    Region,
+    SubField("App Code",',') as AppCode
+FROM [lib://$(vPath)/ACCESS/CW1_ACCESS_AppLevel.xlsx]
+(ooxml, embedded labels, table is [Qlik Section Access])
+where "Restriction Type" ='Region';
+
+Left Join(ACCESS_Temp)
+Geo:
+LOAD
+   	region_code as Region,	
+   	country_code as "Company Code"
+FROM [lib://$(vPath)/QVD's/KPI\Geo.qvd]
+(qvd);
+
+left join(ACCESS_Temp)
+LOAD
+    gc_rn_country_cd  as "Company Code",
+    gc_cd  as COMPANYKEY
+    
+FROM [lib://$(vPath)/QVD's/RAW DATA/PROD/V_DIM_Company.qvd]
+(qvd);
+
+
+Concatenate
+LOAD
+    "ACCESS",
+    "USERID",
+    LDAP_Name,
+    "Restriction Type",
+    Region,
+       COMPANYKEY,
+       SubField("App Code",',') as AppCode
+FROM [lib://$(vPath)/ACCESS/CW1_ACCESS_AppLevel.xlsx]
+(ooxml, embedded labels, table is [Qlik Section Access])
+where "Restriction Type" = 'Country';
+
+Unrestricted:
+NoConcatenate
+LOAD
+    "ACCESS",
+    "USERID",
+    LDAP_Name,
+    "Restriction Type",
+    Region,
+    SubField("App Code",',') as AppCode
+FROM [lib://$(vPath)/ACCESS/CW1_ACCESS_AppLevel.xlsx]
+(ooxml, embedded labels, table is [Qlik Section Access])
+where "Restriction Type" ='Unrestricted';
+
+Left Join(Unrestricted)
+Geo:
+LOAD
+   	'Unrestricted'	as "Restriction Type",
+   	gc_cd  as COMPANYKEY
+FROM [lib://$(vPath)/QVD's/RAW DATA/PROD/V_DIM_Company.qvd]
+(qvd);
+
+
+Concatenate(ACCESS_Temp)
+load * 
+Resident Unrestricted;
+drop table Unrestricted;
+
+
+ACCESS:
+NoConcatenate
+Load 
+	"ACCESS",
+    "USERID",
+    LDAP_Name,
+    "Restriction Type",
+    Region,
+       if(COMPANYKEY='*',COMPANYKEY,COMPANYKEY&'-'&if(AppCode='ALL','$(vKPI)',AppCode)) as COMPANYKEY,
+       1 as DummyTemp
+      Resident ACCESS_Temp; 
+      
+drop table ACCESS_Temp;
+
+Section Access;
+LOAD
+    UPPER("ACCESS") as ACCESS,
+    UPPER("USERID") as "USERID",
+    UPPER("LDAP_Name") as LDAP,
+    UPPER(TRIM(COMPANYKEY)) as COMPANYKEY,
+    1 as DUMMY
+    Resident ACCESS;
+
+Section Application;   
+
+drop table ACCESS;
+//exit Script;

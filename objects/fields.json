@@ -1,0 +1,823 @@
+[
+  {
+    "qIsHidden": true,
+    "qIsSystem": true,
+    "qName": "$Field",
+    "qCardinal": 69,
+    "qTags": [
+      "$ascii",
+      "$text",
+      "$key",
+      "$hidden",
+      "$system"
+    ],
+    "qSrcTables": []
+  },
+  {
+    "qIsHidden": true,
+    "qIsSystem": true,
+    "qName": "$Table",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text",
+      "$key",
+      "$hidden",
+      "$system"
+    ],
+    "qSrcTables": []
+  },
+  {
+    "qIsHidden": true,
+    "qIsSystem": true,
+    "qName": "$Rows",
+    "qCardinal": 3,
+    "qTags": [
+      "$hidden",
+      "$system",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": []
+  },
+  {
+    "qIsHidden": true,
+    "qIsSystem": true,
+    "qName": "$Fields",
+    "qCardinal": 3,
+    "qTags": [
+      "$hidden",
+      "$system",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": []
+  },
+  {
+    "qIsHidden": true,
+    "qIsSystem": true,
+    "qName": "$FieldNo",
+    "qCardinal": 57,
+    "qTags": [
+      "$hidden",
+      "$system",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": []
+  },
+  {
+    "qIsHidden": true,
+    "qIsSystem": true,
+    "qName": "$Info",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text",
+      "$hidden",
+      "$system"
+    ],
+    "qSrcTables": []
+  },
+  {
+    "qName": "Creditor/Debtor",
+    "qCardinal": 276,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Intercompany Org Proxy",
+    "qCardinal": 250,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Type",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Transaction Num",
+    "qCardinal": 6826,
+    "qTags": [],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Job Invoice Number",
+    "qCardinal": 6778,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "DSBInvoice",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Category",
+    "qCardinal": 6,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Post Date",
+    "qCardinal": 4872,
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Due Date",
+    "qCardinal": 4886,
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Currency",
+    "qCardinal": 49,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Transaction Amount",
+    "qCardinal": 4901,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Outstanding Amount",
+    "qCardinal": 4901,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Check/Reference No",
+    "qCardinal": 38,
+    "qTags": [],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Canceled",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Created By",
+    "qCardinal": 1386,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Created Time",
+    "qCardinal": 4995,
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Last Edit",
+    "qCardinal": 3130,
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Branch",
+    "qCardinal": 250,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Department",
+    "qCardinal": 37,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Invoice Description",
+    "qCardinal": 5756,
+    "qTags": [],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Exchange Rate",
+    "qCardinal": 402,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Tax Amount",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Local Amount",
+    "qCardinal": 5231,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Check Book",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Creditor/Debtor Full Name",
+    "qCardinal": 122,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Payment_Requested_Name",
+    "qCardinal": 1386,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Receiving_Branch",
+    "qCardinal": 171,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Receiving_Department",
+    "qCardinal": 29,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Receiving_Operator",
+    "qCardinal": 474,
+    "qTags": [],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Payment_Requisition_Date",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Payment_Requisition_Status",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Aggreed_Payment",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Audited_by",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Company Code",
+    "qCardinal": 92,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Country",
+    "qCardinal": 87,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "currency_cd",
+    "qCardinal": 49,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "eur_exch_rt",
+    "qCardinal": 48,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Invoice_Date",
+    "qCardinal": 239,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "key",
+    "qCardinal": 197,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Date",
+    "qCardinal": 239,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Year",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Month",
+    "qCardinal": 12,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "WeekDays",
+    "qCardinal": 7,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Week",
+    "qCardinal": 51,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Ageing Bucket",
+    "qCardinal": 5,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "country_code",
+    "qCardinal": 87,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Sum_Transaction_Amt",
+    "qCardinal": 4901,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Transaction_Amount_eur",
+    "qCardinal": 5106,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "LiveKey",
+    "qCardinal": 1546,
+    "qTags": [
+      "$ascii",
+      "$text",
+      "$key"
+    ],
+    "qSrcTables": [
+      "Live_Y_N",
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "COMPANYKEY",
+    "qCardinal": 92,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "country_name",
+    "qCardinal": 87,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "subregion_code",
+    "qCardinal": 20,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "subregion_name",
+    "qCardinal": 20,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "region_code",
+    "qCardinal": 4,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "region_name",
+    "qCardinal": 4,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "Region",
+    "qCardinal": 5,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Live_Y_N"
+    ]
+  },
+  {
+    "qName": "COUNTRY CODE",
+    "qCardinal": 87,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Live_Y_N"
+    ]
+  },
+  {
+    "qName": "AutoDateKey",
+    "qCardinal": 87,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Live_Y_N"
+    ]
+  },
+  {
+    "qName": "COUNTRY NAME",
+    "qCardinal": 87,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Live_Y_N"
+    ]
+  },
+  {
+    "qName": "Actual OFR CW1",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Live_Y_N"
+    ]
+  },
+  {
+    "qName": "OFR Actul Go Live Date",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Live_Y_N"
+    ]
+  },
+  {
+    "qName": "CW1 Start Date",
+    "qCardinal": 28,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Live_Y_N"
+    ]
+  },
+  {
+    "qName": "CW1 End Date",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Live_Y_N"
+    ]
+  },
+  {
+    "qName": "S",
+    "qCardinal": 28,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Live_Y_N"
+    ]
+  },
+  {
+    "qName": "E",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Live_Y_N"
+    ]
+  },
+  {
+    "qName": "AutoDate",
+    "qCardinal": 239,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Live_Y_N"
+    ]
+  },
+  {
+    "qName": "OFR CW1",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "CW1_LIVE",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Stage_final"
+    ]
+  },
+  {
+    "qName": "View",
+    "qCardinal": 4,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "INLFED"
+    ],
+    "qAlwaysOneSelected": true
+  }
+]
